@@ -4,7 +4,7 @@
 <head>
     <title>test</title></br>
     <link rel="stylesheet" href="estilo.css" type="text/css">
-    
+    <meta charset="utf-8">
 </head>
 
 <body>
@@ -25,12 +25,12 @@
              <td><a href="test.php?modulo=ingresar" method="&_POST">ingresar</a></td>
             </tr>  
             <tr>  
-             <td><a href="test.php">dashboard</a> </td>
+             <td><a href="test.php?modulo=dashboard" method="$_POST">dashboard</a> </td>
              </tr>      
         </table>           
 <!-- fin de menu-->
 
-        <th colspan="2"> datos
+        <th colspan="2"> datos </br>
 
  <!-- inicio de datos -->
  
@@ -46,10 +46,16 @@
         } else  if ($modulo=='ingresar') {   
 
             include ("modulos/ingresar.php");
+
+
+        } else  if ($modulo=='dashboard') {   
+
+            include ("modulos/dashboard.php");
         }
         
          
 ?>
+
 
  
 </th>
