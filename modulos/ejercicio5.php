@@ -24,15 +24,19 @@
 
     $distancia = $_POST ['distancia'] ?? 0 ;
     
-    $metros_kilometros= ($distancia / 1000) ;
+    $metros_kilometros = ((1 * $distancia )/ 1000) ;
 
-    $minutos = (2.25 * 60);
+    $hora= ((2 * 60) / 1) ;
+    
+    $minutos = ($hora + 25);
+
+    $velocidad= ($metros_kilometros / $minutos ) ;
 
 ?>
+<strong>la velocidad es  </strong><span><?php  echo  "$velocidad" ; ?> </span></br>
 
+<strong>la distancia recorrida </strong><span><?php  echo  "$metros_kilometros" ; ?> kilometros</span></br>
 
-<strong>la distancia recorrida </strong><span><?php  echo  "$metros_kilometros" ; ?>kilometros</span></br>
-
-<strong>el tiempo de carrera es </strong><span><?php  echo  "$minutos" ; ?>minutos</span></br>
+<strong>el tiempo de carrera es </strong><span><?php  echo  "$minutos" ; ?> minutos</span></br>
 
 
