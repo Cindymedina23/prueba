@@ -19,7 +19,13 @@
              <td><a href="test.php">pagina principal </a> </td>
              </tr>
             <tr> 
-             <td><a href="test.php?modulo=registrar" method="&_POST"> registrar</a></td>         
+             <td><a href="test.php?modulo=register_user" method="&_POST"> register user</a></td>         
+            </tr>
+            <tr> 
+             <td><a href="test.php?modulo=register_teacher" method="&_POST"> register teacher</a></td>         
+            </tr>
+            <tr> 
+             <td><a href="test.php?modulo=registrar_tarea" method="&_POST"> registrar tarea</a></td>         
             </tr>
              <tr> 
              <td><a href="test.php?modulo=ingresar" method="&_POST">ingresar</a></td>
@@ -44,7 +50,6 @@
              </tr>
              <td><a href="test.php?modulo=ejercicio6" method="$_POST">ejercicio6</a> </td>
              </tr>
-
         </table>           
 <!-- fin de menu-->
 
@@ -56,11 +61,13 @@
  
      $modulo = $_GET['modulo'] ?? '';
      
-        if ($modulo=='registrar') { 
-            include ("modulos/registrar.php");  
-        } else  if ($modulo=='ingresar') {
-            include ("modulos/ingresar.php");
-        } else  if ($modulo=='dashboard') {   
+        if ($modulo=='register_user') { 
+            include ("modulos/register_user.php");  
+        } else  if ($modulo=='register_teacher') {
+            include ("modulos/register_teacher.php");
+        }else  if ($modulo=='registrar_tarea') {
+            include ("modulos/registrar_tarea.php");
+        }else  if ($modulo=='dashboard') {   
             include ("modulos/dashboard.php");
         } else  if ($modulo=='ejercicio1') {   
              include ("modulos/ejercicio1.php");
@@ -74,19 +81,11 @@
             include ("modulos/ejercicio5.php");
         } else  if ($modulo=='ejercicio6') {  
             include ("modulos/ejercicio6.php");
-        } 
-
-
-
-
-
-
-
+        }
 
 ?>
 
 
- 
 </th>
 
 </table >

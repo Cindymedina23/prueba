@@ -17,10 +17,27 @@
         <td><input type="email" name="correo" value=""></td>
     </tr>
 </br>
-    <tr>
-        <td>clave</td>
+<tr>
+    <td>clave</td>
         <td><input type="password" name="clave" value=""></td>
     </tr>
+    <tr>
+        <td>fecha de nacimiento</td>
+        <td><input type="date" name="birthdate" value=""></td>
+    </tr>
+    <tr>
+        <td>direccion</td>
+        <td><input type="text" name="address" value=""></td>
+    </tr>
+    <tr>
+        <td>avatar</td>
+        <td><input type="text" name="avatar" value=""></td>
+    </tr>
+    <tr>
+        <td>active</td>
+        <td><input type="number" name="active" value=""></td>
+    </tr>
+
 
     <tr>
     
