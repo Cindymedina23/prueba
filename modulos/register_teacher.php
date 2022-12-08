@@ -21,12 +21,6 @@ if(isset($_POST['mail'])){
     $mail = '';
 }
 
-if(isset($_POST['password'])){
-    $password = $_POST['password'];
-} else {
-    $password = '';
-}
-
 if(isset($_POST['matter'])){
     $matter = $_POST['matter'];
 } else {
@@ -37,7 +31,7 @@ if(isset($_POST['matter'])){
 
 if(isset($_POST['name'])){
     $objuser = new teacher();
-    $objuser->insert($name, $lastname, $mail, $password, $matter);
+    $objuser->insert($name, $lastname, $mail, $matter);
     header("Location: test.php");
 }
 ?>
@@ -63,10 +57,6 @@ if(isset($_POST['name'])){
         <td><input type="email" name="mail" value=""></td>
     </tr>
 </br>
-<tr>
-    <td>password</td>
-        <td><input type="password" name="password" value=""></td>
-    </tr>
     <tr>
         <td>matter</td>
         <td><input type="int" name="matter" value=""></td>

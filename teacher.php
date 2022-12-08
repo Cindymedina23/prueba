@@ -5,28 +5,26 @@
         private $strname;
         private $strlastname;
         private $strmail;
-        private $strpassword;
-        private $intmatter;
+        private $strmatter;
        
         public function __construct () {
             $this->conexion = new conexion ();
             $this->conexion = $this->conexion->connect();
         }
 
-        public function insert(string $name, string $lastname, string $mail, string $password, int $matter){
+        public function insert(string $name, string $lastname, string $mail, string $matter){
 
             $this->strname = $name;
             $this->strlastname = $lastname;
             $this->strmail = $mail;
-            $this->strpassword = $password;
-            $this->intmatter =$matter ;
+            $this->strmatter =$matter ;
         
 
-            $sql = "INSERT INTO teachers(name, lastname, mail, password, matter) VALUES(?,?,?,?,?)";
+            $sql = "INSERT INTO teachers(name, lastname, mail, matter) VALUES(?,?,?,?)";
            
             $insert = $this->conexion->prepare($sql);
            
-            $arrData = array($this->strname, $this->strlastname, $this->strmail, $this->strpassword, $this->intmatter);
+            $arrData = array($this->strname, $this->strlastname, $this->strmail, $this->strmatter);
            
             $resInsert = $insert->execute($arrData);
                            
@@ -43,20 +41,19 @@
             return $request;
         }
 
-        public function updateTeacher(string $name, string $lastname, string $mail, string $password, int $matter){
+        public function updateTeacher(string $name, string $lastname, string $mail, string $matter){
            
             $this->strname = $name;
             $this->strlastname = $lastname;
             $this->strmail = $mail;
-            $this->strpassword = $password;
-            $this->intmatter =$matter;
+            $this->strmatter =$matter;
             
 
-            $sql = "UPDATE users SET name=?, lastname=?, mail=?, password=?, matter=? WHERE id=$id";
+            $sql = "UPDATE teachers SET name=?, lastname=?, mail=?, matter=? WHERE id=$id";
            
             $update = $this->conexion->prepare($sql);
 
-            $arrData = array( $this->strname, $this->strlastname, $this->strmail, $this->strpassword, $this->intmatter);
+            $arrData = array( $this->strname, $this->strlastname, $this->strmail, $this->strmatter);
             
             $resExecute = $update->execute($arrData);
             return $resExecute;
