@@ -1,12 +1,13 @@
 <?php
-
 require_once("autoload.php");
 
 if(isset($_POST['name'])){
     $name = $_POST['name'];
+    
 } else {
     $name = '';
 }
+
 
 if(isset($_POST['lastname'])){
     $lastname = $_POST['lastname'];
@@ -45,70 +46,73 @@ if(isset($_POST['avatar'])){
     $avatar = '';
 }
 
-if(isset($_POST['active'])){
-    $active = $_POST['active'];
-} else {
-    $active = 0;
+if (isset($_REQUEST['register'])) {
+if (isset($_FILES['avatar'])) {
+    $nombreImg = $_FILES['avatar']['name'];
+    $ruta      = $_FILES['avatar']['tmp_name'];
+    $destino   = "images" . $nombreImg;
+
+   move_uploaded_file($ruta, $destino);
+}
+
 }
 
 if(isset($_POST['name'])){
+   
     $objuser = new user();
-    $objuser->insert($name, $lastname, $mail, $password, $birthdate, $address, $avatar, $active);
-    header("Location: test.php");
+    $objuser->insert($name, $lastname, $mail, $password, $birthdate, $address, $avatar); 
+    echo '<script>alert("registered user")</script>';
+//header ("Location:test.php");
 }
+
+
 ?>
 
 
-
-<form  method="post" action="test.php?modulo=register_user" >
+<form  method="post" action="test.php?modulo=register_user"  enctype="multipart/form-data">
 
 <table  colspan="2"  cellspacing="2" cellspacing="10" width="10%">
 
     <tr>
         <td>name</td>
-        <td><input type="text" name="name" value=""></td>
+        <td><input type="text" name="name" value="" required></td>
     </tr>
 </br>
     <tr>
         <td>lastname</td>
-        <td><input type="text" name="lastname" value=""></td>
+        <td><input type="text" name="lastname" value="" required></td>
     </tr>
 </br>
     <tr>
         <td>mail</td>
-        <td><input type="email" name="mail" value=""></td>
+        <td><input type="email" name="mail" value="" required></td>
     </tr>
 </br>
 <tr>
     <td>password</td>
-        <td><input type="password" name="password" value=""></td>
+        <td><input type="password" name="password" value="" required></td>
     </tr>
     <tr>
         <td>birthdate</td>
-        <td><input type="date" name="birthdate" value=""></td>
+        <td><input type="date" name="birthdate" value="" required></td>
     </tr>
     <tr>
         <td>address</td>
-        <td><input type="text" name="address" value=""></td>
+        <td><input type="text" name="address" value="" required></td>
     </tr>
     <tr>
         <td>avatar</td>
-        <td><input type="text" name="avatar" value=""></td>
+        <td><input type="file" id="avatar" name="avatar" accept="image/png, .jpeg, .jpg, image/gif" required></td>
     </tr>
     <tr>
         <td>active</td>
-        <td><input type="int" name="active" value=""></td>
+        <td><input type="checkbox" name="active" value="" ></td>
     </tr>
-
 
     <tr>
-    
-        <td><input type="submit" value="enviar" ></td>
-      
+        <td><input type="submit" name="register" value="register"  > </td>
     </tr>
-
- 
+    
 </table>
-
 
 </form>

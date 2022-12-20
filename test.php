@@ -7,16 +7,18 @@
     <meta charset="utf-8">
 </head>
 
+
 <body>
+
 <table>
-    <caption><strong><h2>registro de usuario</h2></strong></caption>
+    <caption><strong><h2>register user</h2></strong></caption>
     <tr>
         <th  colspan="2" > menu 
 <!-- inicio de menu -->
 
         <table >     
             <tr>  
-             <td><a href="test.php">pagina principal </a> </td>
+             <td><a href="test.php">homepage </a> </td>
              </tr>
             <tr> 
              <td><a href="test.php?modulo=register_user" method="&_POST"> register user</a></td>         
@@ -34,21 +36,21 @@
              <td><a href="test.php?modulo=dashboard" method="$_POST">dashboard</a> </td>
              </tr>     
              <tr>  
-             <td><a href="test.php?modulo=ejercicio1" method="$_POST">ejercicio1</a> </td>
+             <td><a href="test.php?modulo=ejercicio1" method="$_POST">exercise1</a> </td>
              </tr> 
              <tr>  
-             <td><a href="test.php?modulo=ejercicio2" method="$_POST">ejercicio2</a> </td>
+             <td><a href="test.php?modulo=ejercicio2" method="$_POST">exercise2</a> </td>
              </tr>
              <tr>  
-             <td><a href="test.php?modulo=ejercicio3" method="$_POST">ejercicio3</a> </td>
+             <td><a href="test.php?modulo=ejercicio3" method="$_POST">exercise3</a> </td>
              </tr>
-             <td><a href="test.php?modulo=ejercicio4" method="$_POST">ejercicio4</a> </td>
-             </tr>
-             </tr>
-             <td><a href="test.php?modulo=ejercicio5" method="$_POST">ejercicio5</a> </td>
+             <td><a href="test.php?modulo=ejercicio4" method="$_POST">exercise4</a> </td>
              </tr>
              </tr>
-             <td><a href="test.php?modulo=ejercicio6" method="$_POST">ejercicio6</a> </td>
+             <td><a href="test.php?modulo=ejercicio5" method="$_POST">exercise5</a> </td>
+             </tr>
+             </tr>
+             <td><a href="test.php?modulo=ejercicio6" method="$_POST">exercise6</a> </td>
              </tr>
         </table>           
 <!-- fin de menu-->
@@ -62,7 +64,7 @@
      $modulo = $_GET['modulo'] ?? '';
      
         if ($modulo=='register_user') { 
-            include ("modulos/register_user.php");  
+            include ("modulos/register_user.php");
         } else  if ($modulo=='register_teacher') {
             include ("modulos/register_teacher.php");
         }else  if ($modulo=='registrar_tarea') {

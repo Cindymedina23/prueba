@@ -26,14 +26,18 @@ if(isset($_POST['matter'])){
 } else {
     $matter = '';
 }
-
-
+   
 
 if(isset($_POST['name'])){
     $objuser = new teacher();
     $objuser->insert($name, $lastname, $mail, $matter);
-    header("Location: test.php");
+    echo '<script>alert("registered teacher")</script>';
+    //header("Location: test.php");      
+       
 }
+
+
+    
 ?>
 
 
@@ -44,26 +48,26 @@ if(isset($_POST['name'])){
 
     <tr>
         <td>name</td>
-        <td><input type="text" name="name" value=""></td>
+        <td><input type="text" name="name" value="" required></td>
     </tr>
 </br>
     <tr>
         <td>lastname</td>
-        <td><input type="text" name="lastname" value=""></td>
+        <td><input type="text" name="lastname" value="" required></td>
     </tr>
 </br>
     <tr>
         <td>mail</td>
-        <td><input type="email" name="mail" value=""></td>
+        <td><input type="email" name="mail" value="" required></td>
     </tr>
 </br>
     <tr>
         <td>matter</td>
-        <td><input type="int" name="matter" value=""></td>
+        <td><input type="int" name="matter" value="" required></td>
     </tr>
     
     <tr>
-        <td><input type="submit" value="enviar" ></td>  
+        <td><input type="submit" name="submit" value="submit"> </td>  
     </tr>
 
  
