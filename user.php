@@ -9,13 +9,14 @@
         private $strbirthdate;
         private $straddress;
         private $stravatar;
+        private $intavatar;
 
         public function __construct () {
             $this->conexion = new conexion ();
             $this->conexion = $this->conexion->connect();
         }
 
-        public function insert(string $name, string $lastname, string $mail, string $password, string $birthdate, string $address, string $avatar){
+        public function insert(string $name, string $lastname, string $mail, string $password, string $birthdate, string $address, string $avatar, int $active){
 
             $this->strname = $name;
             $this->strlastname = $lastname;
@@ -24,12 +25,13 @@
             $this->strbirthdate =$birthdate ;
             $this->straddress =$address ;
             $this->stravatar = $avatar ;
+            $this->intactive = $active ;
 
-            $sql = "INSERT INTO users (name, lastname, mail, password, birthdate, address, avatar) VALUES(?,?,?,?,?,?,?)";
+            $sql = "INSERT INTO users (name, lastname, mail, password, birthdate, address, avatar, active) VALUES(?,?,?,?,?,?,?,?)";
            
             $insert = $this->conexion->prepare($sql);
            
-            $arrData = array($this->strname, $this->strlastname, $this->strmail, $this->strpassword, $this->strbirthdate, $this->straddress, $this->stravatar);
+            $arrData = array($this->strname, $this->strlastname, $this->strmail, $this->strpassword, $this->strbirthdate, $this->straddress, $this->stravatar, $this->intactive);
            
             $resInsert = $insert->execute($arrData);
                            
@@ -46,7 +48,7 @@
             return $request;
         }
 
-        public function updateUser(string $name, string $lastname, string $mail, string $password, string $birthdate, string $address, string $avatar){
+        public function updateUser(string $name, string $lastname, string $mail, string $password, string $birthdate, string $address, string $avatar, int $active){
            
             $this->strname = $name;
             $this->strlastname = $lastname;
@@ -55,12 +57,13 @@
             $this->strbirthdate =$birthdate ;
             $this->straddress =$address ;
             $this->stravatar = $avatar ;
+            $this->intactive = $active ;
 
-            $sql = "UPDATE users SET name=?, lastname=?, mail=?, password=?, birthdate=?, address=?, avatar=?, WHERE id=$id";
+            $sql = "UPDATE users SET name=?, lastname=?, mail=?, password=?, birthdate=?, address=?, avatar=?, active=?, WHERE id=$id";
            
             $update = $this->conexion->prepare($sql);
 
-            $arrData = array( $this->strname, $this->strlastname, $this->strmail, $this->strpassword, $this->strbirthdate, $this->straddress, $this->stravatar);
+            $arrData = array( $this->strname, $this->strlastname, $this->strmail, $this->strpassword, $this->strbirthdate, $this->straddress, $this->stravatar, $this->intactive);
             
             $resExecute = $update->execute($arrData);
             return $resExecute;

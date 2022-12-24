@@ -46,21 +46,34 @@ if(isset($_POST['avatar'])){
     $avatar = '';
 }
 
+if(isset($_POST['active'])){
+    $active = $_POST['active'];
+} else {
+    $active = '';
+}
+
+
 if (isset($_REQUEST['register'])) {
-if (isset($_FILES['avatar'])) {
-    $nombreImg = $_FILES['avatar']['name'];
-    $ruta      = $_FILES['avatar']['tmp_name'];
-    $destino   = "images" . $nombreImg;
-
-   move_uploaded_file($ruta, $destino);
+    if (isset($_FILES['avatar'])) {
+        $nombreImg = $_FILES['avatar']['name'];
+        $ruta      = $_FILES['avatar']['tmp_name'];
+        $avatar   = "images/" . $nombreImg;
+    
+    move_uploaded_file($ruta, $avatar);
+   
+    }
+   
 }
 
-}
+
+if (isset($_REQUEST['active'])) {
+    $active = ($_POST['active'] == 'on') ? 1 : 0 ;
+}else $active = 0 ;
 
 if(isset($_POST['name'])){
    
     $objuser = new user();
-    $objuser->insert($name, $lastname, $mail, $password, $birthdate, $address, $avatar); 
+    $objuser->insert($name, $lastname, $mail, $password, $birthdate, $address, $avatar, $active); 
     echo '<script>alert("registered user")</script>';
 //header ("Location:test.php");
 }
@@ -102,11 +115,11 @@ if(isset($_POST['name'])){
     </tr>
     <tr>
         <td>avatar</td>
-        <td><input type="file" id="avatar" name="avatar" accept="image/png, .jpeg, .jpg, image/gif" required></td>
+        <td><input type="file" id="avatar" name="avatar" accept="image/png, .jpeg, .jpg, image/gif, .PNG, .gif, .png" required></td>
     </tr>
     <tr>
         <td>active</td>
-        <td><input type="checkbox" name="active" value="" ></td>
+        <td><input type="checkbox" name="active"></td>
     </tr>
 
     <tr>
