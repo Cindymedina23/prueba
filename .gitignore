@@ -1,2 +1,2 @@
 # Ignorar carpeta images
-.*
+./images

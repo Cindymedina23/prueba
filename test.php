@@ -21,10 +21,13 @@
              <td><a href="test.php">homepage </a> </td>
              </tr>
             <tr> 
-             <td><a href="test.php?modulo=register_user" method="&_POST"> register user</a></td>         
+             <td><a href="test.php?modulo=register_user" method="&_POST"> registro de usuario</a></td>         
             </tr>
             <tr> 
-             <td><a href="test.php?modulo=register_teacher" method="&_POST"> register teacher</a></td>         
+             <td><a href="test.php?modulo=usuarios" method="&_POST"> usuarios registrados</a></td>         
+            </tr>
+            <tr> 
+             <td><a href="test.php?modulo=register_teacher" method="&_POST"> registro de profesor</a></td>         
             </tr>
             <tr> 
              <td><a href="test.php?modulo=registrar_tarea" method="&_POST"> registrar tarea</a></td>         
@@ -65,6 +68,8 @@
      
         if ($modulo=='register_user') { 
             include ("modulos/register_user.php");
+        } else    if ($modulo=='usuarios') { 
+            include ("modulos/usuarios.php");
         } else  if ($modulo=='register_teacher') {
             include ("modulos/register_teacher.php");
         }else  if ($modulo=='registrar_tarea') {

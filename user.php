@@ -42,13 +42,13 @@
         }
 
         public function getUsers() {
-            $sql = "SELECT * FROM 'users';";
+            $sql = "SELECT * FROM 'users' ";
             $execute = $this->conexion->query($sql);
             $request = $execute->ferchall(PDO::FETCH_ASSOC);
             return $request;
         }
 
-        public function updateUser(string $name, string $lastname, string $mail, string $password, string $birthdate, string $address, string $avatar, int $active){
+        public function updateUser(int $id, string $name, string $lastname, string $mail, string $password, string $birthdate, string $address, string $avatar, int $active){
            
             $this->strname = $name;
             $this->strlastname = $lastname;

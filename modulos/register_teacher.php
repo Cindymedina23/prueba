@@ -27,17 +27,11 @@ if(isset($_POST['matter'])){
     $matter = '';
 }
    
-
 if(isset($_POST['name'])){
     $objuser = new teacher();
     $objuser->insert($name, $lastname, $mail, $matter);
-    echo '<script>alert("registered teacher")</script>';
-    //header("Location: test.php");      
-       
-}
-
-
-    
+    echo '<script>alert("registered teacher")</script>';   
+} 
 ?>
 
 
@@ -47,27 +41,27 @@ if(isset($_POST['name'])){
 <table  colspan="2"  cellspacing="2" cellspacing="10" width="10%">
 
     <tr>
-        <td>name</td>
+        <td>nombre</td>
         <td><input type="text" name="name" value="" required></td>
     </tr>
 </br>
     <tr>
-        <td>lastname</td>
+        <td>apellido</td>
         <td><input type="text" name="lastname" value="" required></td>
     </tr>
 </br>
     <tr>
-        <td>mail</td>
+        <td>correo</td>
         <td><input type="email" name="mail" value="" required></td>
     </tr>
 </br>
     <tr>
-        <td>matter</td>
+        <td>materia</td>
         <td><input type="int" name="matter" value="" required></td>
     </tr>
     
     <tr>
-        <td><input type="submit" name="submit" value="submit"> </td>  
+        <td><input type="submit" name="registrarse" value="submit"> </td>  
     </tr>
 
  
