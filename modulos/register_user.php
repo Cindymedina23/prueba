@@ -1,5 +1,5 @@
 <?php
-//header ("Location:test.php");
+
 require_once("autoload.php");
 
 if(isset($_POST['name'])){
@@ -50,7 +50,7 @@ if(isset($_POST['active'])){
     $active = '';
 }
 
-if (isset($_REQUEST['registrarse'])) {
+if (isset($_REQUEST['registrar'])) {
     if (isset($_FILES['avatar'])) {
         $nombreImg = $_FILES['avatar']['name'];
         $ruta      = $_FILES['avatar']['tmp_name'];
@@ -69,6 +69,8 @@ if(isset($_POST['name'])){
     $objuser->insert($name, $lastname, $mail, $password, $birthdate, $address, $avatar, $active); 
     echo '<script>alert("usuario registrado")</script>';
 }
+
+
 ?>
 
 
@@ -82,6 +84,7 @@ if(isset($_POST['name'])){
     <tr><td>direccion</td><td><input type="text" name="address" value="" required></td></tr>
     <tr><td>avatar</td><td><input type="file" id="avatar" name="avatar" accept="image/png, .jpeg, .jpg, image/gif, .PNG, .gif, .png" required></td></tr>
     <tr><td>active</td><td><input type="checkbox" name="active"></td></tr>
-    <tr><td><input type="submit" name="registrarse" value="register"  > </td></tr>   
+    <tr><td> <a href="test.php&modulo=usuarios"><input type="submit" name="registrar" value="registrar"> </a></td></tr>    
 </table>
-</form>
+</form> 
+

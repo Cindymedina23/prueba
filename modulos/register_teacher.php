@@ -34,38 +34,12 @@ if(isset($_POST['name'])){
 } 
 ?>
 
-
-
 <form  method="post" action="test.php?modulo=register_teacher" >
-
 <table  colspan="2"  cellspacing="2" cellspacing="10" width="10%">
-
-    <tr>
-        <td>nombre</td>
-        <td><input type="text" name="name" value="" required></td>
-    </tr>
-</br>
-    <tr>
-        <td>apellido</td>
-        <td><input type="text" name="lastname" value="" required></td>
-    </tr>
-</br>
-    <tr>
-        <td>correo</td>
-        <td><input type="email" name="mail" value="" required></td>
-    </tr>
-</br>
-    <tr>
-        <td>materia</td>
-        <td><input type="int" name="matter" value="" required></td>
-    </tr>
-    
-    <tr>
-        <td><input type="submit" name="registrarse" value="submit"> </td>  
-    </tr>
-
- 
+    <tr><td>nombre</td><td><input type="text" name="name" value="" required></td></tr></br>
+    <tr><td>apellido</td><td><input type="text" name="lastname" value="" required></td></tr></br>
+    <tr><td>correo</td><td><input type="email" name="mail" value="" required></td></tr></br>
+    <tr><td>materia</td><td><input type="int" name="matter" value="" required></td></tr></br>
+    <tr><td><input type="submit" name="registrarse" value="submit"> </td>  </tr></br>
 </table>
-
-
 </form>

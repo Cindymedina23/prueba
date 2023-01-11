@@ -17,51 +17,25 @@
 <!-- inicio de menu -->
 
         <table >     
-            <tr>  
-             <td><a href="test.php">homepage </a> </td>
-             </tr>
-            <tr> 
-             <td><a href="test.php?modulo=register_user" method="&_POST"> registro de usuario</a></td>         
-            </tr>
-            <tr> 
-             <td><a href="test.php?modulo=usuarios" method="&_POST"> usuarios registrados</a></td>         
-            </tr>
-            <tr> 
-             <td><a href="test.php?modulo=register_teacher" method="&_POST"> registro de profesor</a></td>         
-            </tr>
-            <tr> 
-             <td><a href="test.php?modulo=registrar_tarea" method="&_POST"> registrar tarea</a></td>         
-            </tr>
-             <tr> 
-             <td><a href="test.php?modulo=ingresar" method="&_POST">ingresar</a></td>
-            </tr>  
-            <tr>  
-             <td><a href="test.php?modulo=dashboard" method="$_POST">dashboard</a> </td>
-             </tr>     
-             <tr>  
-             <td><a href="test.php?modulo=ejercicio1" method="$_POST">exercise1</a> </td>
-             </tr> 
-             <tr>  
-             <td><a href="test.php?modulo=ejercicio2" method="$_POST">exercise2</a> </td>
-             </tr>
-             <tr>  
-             <td><a href="test.php?modulo=ejercicio3" method="$_POST">exercise3</a> </td>
-             </tr>
-             <td><a href="test.php?modulo=ejercicio4" method="$_POST">exercise4</a> </td>
-             </tr>
-             </tr>
-             <td><a href="test.php?modulo=ejercicio5" method="$_POST">exercise5</a> </td>
-             </tr>
-             </tr>
-             <td><a href="test.php?modulo=ejercicio6" method="$_POST">exercise6</a> </td>
-             </tr>
+            <tr><td><a href="test.php">homepage </a> </td></tr>
+            <tr> <td><a href="test.php?modulo=register_user" method="&_POST"> registro de usuario</a></td></tr>
+            <tr><td><a href="test.php?modulo=usuarios" method="&_POST"> usuarios registrados</a></td></tr>
+            <tr><td><a href="test.php?modulo=editar" method="&_POST">editar usuarios registrados</a></td></tr>
+            <tr><td><a href="test.php?modulo=eliminar" method="&_POST">eliminar usuarios registrados</a></td></tr>
+            <tr><td><a href="test.php?modulo=register_teacher" method="&_POST"> registro de profesor</a></td></tr>
+            <tr><td><a href="test.php?modulo=registrar_tarea" method="&_POST"> registrar tarea</a></td></tr>
+             <tr><td><a href="test.php?modulo=ingresar" method="&_POST">ingresar</a></td></tr>  
+            <tr><td><a href="test.php?modulo=dashboard" method="$_POST">dashboard</a> </td></tr>     
+             <tr><td><a href="test.php?modulo=ejercicio1" method="$_POST">exercise1</a> </td></tr> 
+             <tr><td><a href="test.php?modulo=ejercicio2" method="$_POST">exercise2</a> </td></tr>
+             <tr><td><a href="test.php?modulo=ejercicio3" method="$_POST">exercise3</a> </td></tr>
+             <td><a href="test.php?modulo=ejercicio4" method="$_POST">exercise4</a> </td></tr></tr>
+             <td><a href="test.php?modulo=ejercicio5" method="$_POST">exercise5</a> </td></tr></tr>
+             <td><a href="test.php?modulo=ejercicio6" method="$_POST">exercise6</a> </td></tr>
         </table>           
 <!-- fin de menu-->
-
         <th colspan="2"> datos </br>
-
  <!-- inicio de datos -->
- 
  <?php
  
      $modulo = $_GET['modulo'] ?? '';
@@ -70,7 +44,11 @@
             include ("modulos/register_user.php");
         } else    if ($modulo=='usuarios') { 
             include ("modulos/usuarios.php");
-        } else  if ($modulo=='register_teacher') {
+        } else  if ($modulo=='editar') { 
+            include ("modulos/editar.php");
+        } else if ($modulo=='eliminar') { 
+            include ("modulos/eliminar.php");
+        } elseif ($modulo=='register_teacher') {
             include ("modulos/register_teacher.php");
         }else  if ($modulo=='registrar_tarea') {
             include ("modulos/registrar_tarea.php");
@@ -91,13 +69,8 @@
         }
 
 ?>
-
-
 </th>
-
 </table >
-<!-- fin de datos -->
-  
+<!-- fin de datos --> 
 </body>
-
 </html>
